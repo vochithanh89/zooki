@@ -16,13 +16,10 @@ function Body() {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth',
+                    block: 'nearest',
                 });
             });
         });
-
-        window.onscroll = (e) => {
-            const element = e.target;
-        };
     }, []);
 
     return (

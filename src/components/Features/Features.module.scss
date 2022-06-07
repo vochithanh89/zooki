@@ -58,6 +58,14 @@
             position: relative;
             z-index: 1;
             transition: $transition;
+            @include tablet {
+                margin: 0;
+                width: 90%;
+            }
+            @include mobile {
+                margin: 0;
+                width: 90%;
+            }
         }
         &::after {
             content: '';
@@ -71,6 +79,16 @@
             border-radius: 50%;
             background-color: $primaryColor;
             transition: $transition;
+            @include tablet {
+                aspect-ratio: 1/1;
+                width: 100%;
+                height: auto;
+            }
+            @include mobile {
+                aspect-ratio: 1/1;
+                width: 100%;
+                height: auto;
+            }
         }
 
         &:hover img {
