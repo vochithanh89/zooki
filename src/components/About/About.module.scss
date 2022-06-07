@@ -5,6 +5,7 @@
     padding: $bodyPaddingItem;
     background-image: url('../../assets/image/coverAbout.png');
     background-size: cover;
+    scroll-margin-top: $scrollMarginTop;
 
     .container {
         @include container;

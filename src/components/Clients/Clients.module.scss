@@ -8,6 +8,7 @@
     background-size: cover;
     background-attachment: fixed;
     color: $textColor1;
+    scroll-margin-top: $scrollMarginTop;
     &::after {
         content: '';
         display: block;

@@ -11,6 +11,7 @@
     z-index: 10;
     color: $textColor1;
     transition: $transition;
+    scroll-margin-top: $scrollMarginTop;
 
     @include tablet {
         background-color: black !important;

@@ -16,7 +16,6 @@ function Body() {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth',
-                    block: 'nearest',
                 });
             });
         });

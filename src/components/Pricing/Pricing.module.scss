@@ -3,6 +3,8 @@
 
 .pricing {
     padding: $bodyPaddingItem;
+    scroll-margin-top: $scrollMarginTop;
+
     .container {
         @include container;
         .title {

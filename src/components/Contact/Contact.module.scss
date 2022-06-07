@@ -4,6 +4,7 @@
 .contact {
     padding: $bodyPaddingItem;
     background-color: $backgroundColor1;
+    scroll-margin-top: $scrollMarginTop;
 
     .container {
         @include container;
