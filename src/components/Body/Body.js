@@ -22,7 +22,6 @@ function Body() {
 
         window.onscroll = (e) => {
             const element = e.target;
-            console.log({ element });
         };
     }, []);
 
