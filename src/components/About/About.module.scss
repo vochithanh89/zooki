@@ -1,0 +1,119 @@
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
+.about {
+    padding: $bodyPaddingItem;
+    background-image: url('../../assets/image/coverAbout.png');
+    background-size: cover;
+
+    .container {
+        @include container;
+    }
+
+    .heading {
+        .title {
+            @include title;
+        }
+    }
+}
+
+.aboutList {
+    display: flex;
+    flex-wrap: wrap;
+
+    .aboutItem {
+        width: calc(100% / 3);
+        padding: 16px;
+        text-align: center;
+
+        @include mobile {
+            width: 100%;
+        }
+        @include tablet {
+            width: 100%;
+        }
+
+        .aboutItemHeading {
+            .aboutItemIcon {
+                @include itemIcon;
+            }
+
+            .aboutItemTitle {
+                margin-bottom: 8px;
+                font-size: 24px;
+                font-weight: 300;
+            }
+        }
+
+        &:hover .aboutItemIcon {
+            @include itemIconHover;
+        }
+
+        .aboutItemDes {
+            @include description;
+        }
+    }
+}
+
+.aboutInfomation {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 -12px;
+    margin-top: 48px;
+
+    .aboutContent {
+        width: 50%;
+        padding: 0 12px;
+        @include mobile {
+            width: 100%;
+        }
+        .aboutContentTitle {
+            margin-bottom: 16px;
+            line-height: 1.3;
+            font-size: 26px;
+            font-weight: 300;
+        }
+
+        .aboutContentText {
+            @include description;
+            margin-bottom: 16px;
+        }
+
+        .aboutContentFooter {
+            display: flex;
+            font-weight: 300;
+            p {
+                display: flex;
+                align-items: center;
+                margin-right: 4px;
+                &::before {
+                    content: '';
+                    display: inline-block;
+                    width: 8px;
+                    height: 8px;
+                    margin-right: 12px;
+                    border-radius: 50%;
+                    background-color: $btnColor;
+                }
+            }
+
+            a {
+                color: $btnColor;
+            }
+        }
+    }
+
+    .aboutContentImg {
+        width: 50%;
+        padding: 24px;
+        @include mobile {
+            width: 100%;
+        }
+        img {
+            width: 100%;
+            border: 8px solid $primaryColorShadow;
+            border-radius: 8px;
+        }
+    }
+}

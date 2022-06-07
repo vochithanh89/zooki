@@ -1,0 +1,24 @@
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
+// custom swiper
+
+.swiper-pagination {
+    position: relative !important;
+    margin-top: 32px;
+    z-index: 2;
+}
+
+.swiper-pagination-bullet {
+    width: 12px !important;
+    height: 4px !important;
+    margin: 0 8px !important;
+    border-radius: 4px !important;
+    opacity: 1 !important;
+    background: none !important;
+    background-color: rgba(255, 135, 0, 0.5) !important;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: $btnColor !important;
+}

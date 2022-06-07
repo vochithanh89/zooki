@@ -1,0 +1,119 @@
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
+.blog {
+    padding: $bodyPaddingItem;
+
+    .container {
+        @include container;
+
+        .title {
+            @include title;
+        }
+
+        .blogList {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.blogItem {
+    width: calc(100% / 3);
+    padding: 0 12px;
+
+    @include tablet {
+        width: 100%;
+    }
+
+    @include mobile {
+        width: 100%;
+    }
+
+    .blogItemContainer {
+        position: relative;
+
+        .blogItemImg {
+            width: 100%;
+            aspect-ratio: 16/10;
+            border-radius: 8px;
+        }
+
+        .blogItemDate {
+            position: absolute;
+            padding: 2px 12px;
+            border-radius: 4px;
+            letter-spacing: 0.8px;
+            font-size: 15px;
+            font-weight: 200;
+            line-height: 2;
+            color: $textColor1;
+            background-color: #005bea;
+        }
+
+        .blogItemContent {
+            position: relative;
+            top: -24px;
+            padding: 24px;
+            margin: 0 18px;
+            border-radius: 8px;
+            text-align: center;
+            background-color: $textColor1;
+            z-index: 2;
+            transition: $transition;
+
+            &:hover {
+                box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
+                transform: scale(1.05);
+            }
+
+            .blogItemPos {
+                font-size: 13px;
+                margin-bottom: 8px;
+                color: $textColor3;
+            }
+
+            .blogItemTitle {
+                display: block;
+                margin-bottom: 8px;
+                font-size: 18px;
+            }
+
+            .blogItemDes {
+                @include description;
+                font-size: 14px;
+                margin-bottom: 16px;
+            }
+
+            .readMoreBtnContainer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 8px 0;
+                border-bottom: 1px dashed #ccc;
+                border-top: 1px dashed #ccc;
+                font-size: 15px;
+                color: $primaryColor;
+
+                .readMoreBtn {
+                    transition: $transition;
+
+                    &:hover {
+                        transform: translateX(-4px);
+                    }
+
+                    &:hover ~ svg {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+
+                svg {
+                    opacity: 0;
+                    transform: translateX(-4px);
+                    transition: $transition;
+                }
+            }
+        }
+    }
+}

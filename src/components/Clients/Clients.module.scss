@@ -1,0 +1,98 @@
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
+.clients {
+    position: relative;
+    padding: $bodyPaddingItem;
+    background-image: url('https://themes.themesbrand.com/zooki/react/static/media/bg-clients.a77abe0c636f28fc7d59.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: $textColor1;
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .container {
+        @include container;
+
+        .title {
+            @include title;
+            color: $textColor1;
+            z-index: 2;
+        }
+    }
+}
+
+.clientSwiperItem {
+    border-radius: 4px;
+    user-select: none;
+    transition: $transition;
+
+    .clientSwiperItemBox {
+        background-color: hsla(0, 0%, 100%, 0.25);
+        border-radius: 4px;
+        clip-path: polygon(0 0, 100% 0, 100% 88%, 91% 88%, 92% 100%, 87% 88%, 0 88%);
+        margin: 24px 10px 16px 10px;
+        padding: 40px 34px 65px;
+
+        .clientSwiperItemHeading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            .clientSwiperItemTitle {
+                font-size: 24px;
+                font-weight: 300;
+            }
+        }
+
+        .clientSwiperItemDes {
+            @include description;
+            color: hsla(0, 0%, 100%, 0.8);
+            font-size: 15px;
+        }
+    }
+
+    .clientSwiperItemUser {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        text-align: right;
+
+        .clientSwiperItemInfo {
+            margin-right: 16px;
+            .clientSwiperItemUserName {
+                display: flex;
+                align-items: center;
+                font-size: 17px;
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 40px;
+                    height: 1px;
+                    background-color: $btnColor;
+                    margin-right: 8px;
+                }
+            }
+            .clientSwiperItemUserPos {
+                font-size: 13px;
+                color: hsla(0, 0%, 100%, 0.8);
+            }
+        }
+    }
+
+    .clientSwiperItemUserImg {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0px 0px 0px 8px hsla(0, 0%, 100%, 0.1);
+    }
+}

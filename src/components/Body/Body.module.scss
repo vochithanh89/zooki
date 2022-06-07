@@ -1,0 +1,7 @@
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
+.body {
+    display: flex;
+    flex-direction: column;
+}

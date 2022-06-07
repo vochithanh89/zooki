@@ -1,0 +1,146 @@
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
+.pricing {
+    padding: $bodyPaddingItem;
+    .container {
+        @include container;
+        .title {
+            @include title;
+        }
+    }
+}
+
+.pricingList {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -12px;
+}
+
+.pricingItem {
+    width: 25%;
+    margin-top: 24px;
+    padding: 0 12px;
+    @include tablet {
+        width: 50%;
+    }
+
+    @include mobile {
+        width: 100%;
+    }
+    .pricingItemContainer {
+        border: 1px solid #f3f3f3;
+        transition: $transition;
+
+        &:hover {
+            box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+            transform: scale(1.03);
+            border-color: transparent;
+        }
+
+        &:hover .pricingItemHeading {
+            color: $textColor1;
+            background-color: $primaryColor;
+            border-color: transparent;
+        }
+
+        &:hover .pricingItemHeading::after {
+            background-color: $primaryColor;
+            border-color: transparent;
+        }
+
+        .pricingItemHeading {
+            position: relative;
+            display: flex;
+            padding: 24px;
+            border: 1px solid #f3f3f3;
+            background-color: $backgroundColor1;
+            transition: $transition;
+
+            .pricingItemTitle {
+                font-size: 18px;
+                align-self: center;
+            }
+
+            .pricingItemCount {
+                flex: 1;
+                text-align: right;
+                font-size: 32px;
+                sup {
+                    font-size: 18px;
+                    margin-right: 8px;
+                }
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+                display: block;
+                width: 20px;
+                height: 20px;
+                border-right: 1px solid #f3f3f3;
+                border-bottom: 1px solid #f3f3f3;
+                background-color: $backgroundColor1;
+                transition: $transition;
+            }
+        }
+
+        .pricingItemContent {
+            padding: 24px;
+
+            .pricingItemPrice {
+                margin: 20px 0;
+                font-size: 14px;
+                line-height: 1.5;
+                color: $textColor3;
+            }
+        }
+
+        .pricingBtn {
+            display: inline-block;
+            margin-bottom: 24px;
+            margin-left: 24px;
+            padding: 10px 30px;
+            border: 1px solid $primaryColor;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            color: $primaryColor;
+            transition: $transition;
+
+            &:hover {
+                color: $textColor1;
+                background-color: $primaryColor;
+                transform: translateY(-3px);
+                box-shadow: 0 3px 20px -8px #000;
+            }
+        }
+    }
+}
+
+.pricingItem.active {
+    .pricingItemContainer {
+        box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+        transform: scale(1.03);
+        border-color: transparent;
+
+        .pricingItemHeading {
+            color: $textColor1;
+            background-color: $primaryColor;
+            border-color: transparent;
+            &::after {
+                background-color: $primaryColor;
+                border-color: transparent;
+            }
+        }
+
+        .pricingBtn {
+            color: $textColor1;
+            background-color: $primaryColor;
+            transform: translateY(-3px);
+            box-shadow: 0 3px 20px -8px #000;
+        }
+    }
+}

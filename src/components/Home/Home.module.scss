@@ -1,0 +1,79 @@
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
+.home {
+    background-color: $primaryColor;
+    background-image: url('../../assets/image/cover.png');
+    background-size: cover;
+    height: 100vh;
+    color: $textColor1;
+    padding: $bodyPaddingItem;
+
+    .container {
+        @include container;
+
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .info {
+            margin-top: 40px;
+            width: calc(5 / 12 * 100%);
+
+            @include mobile {
+                width: 100%;
+            }
+
+            @include tablet {
+                width: 100%;
+            }
+
+            .title {
+                font-size: 52px;
+                @include mobile {
+                    font-size: 36px;
+                }
+                font-weight: 400;
+                text-shadow: 0 2px 10px rgb(0 0 0 / 20%);
+            }
+
+            .description {
+                @include description;
+                margin-top: 16px;
+                color: $textColor1;
+            }
+
+            .btnContainer {
+                margin-top: 48px;
+
+                .learnMoreBtn {
+                    margin-right: 24px;
+                    padding: 14px 36px;
+                    border-radius: 4px;
+                    background-color: $btnColor;
+                }
+            }
+        }
+
+        .thumnail {
+            width: calc(7 / 12 * 100%);
+            @include mobile {
+                width: 100%;
+            }
+
+            @include tablet {
+                width: 100%;
+            }
+            animation: thumnail 1.2s ease-in infinite alternate;
+        }
+    }
+}
+
+@keyframes thumnail {
+    from {
+        transform: translateY(20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

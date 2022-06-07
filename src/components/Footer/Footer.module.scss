@@ -1,0 +1,106 @@
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
+.footer {
+    padding: $bodyPaddingItem;
+    background-image: url('https://themes.themesbrand.com/zooki/react/static/media/footer-bg.4fa646e4a652770dc6ee.png');
+    background-size: cover;
+
+    @include tablet {
+        padding-bottom: 30px;
+    }
+
+    @include mobile {
+        padding-bottom: 30px;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -12px;
+
+        @include container;
+
+        .footerItem.aboutUs {
+            width: calc(100% / 3);
+
+            @include tablet {
+                width: 100%;
+            }
+
+            @include mobile {
+                width: 100%;
+            }
+
+            .description {
+                @include description;
+                font-size: 14px;
+            }
+        }
+
+        .footerItem {
+            margin-bottom: 48px;
+            padding: 0 12px;
+            width: calc(100% * 2 / 9);
+
+            @include tablet {
+                width: 100%;
+            }
+
+            @include mobile {
+                width: 100%;
+            }
+
+            .title {
+                margin-bottom: 24px;
+                line-height: 2;
+                font-size: 16px;
+                font-weight: 400 !important;
+            }
+
+            .footerSub {
+                display: flex;
+                flex-direction: column;
+
+                .footerSubItem {
+                    margin-bottom: 14px;
+                    font-size: 14px;
+                    color: $textColor3;
+                    transition: $transition;
+
+                    a {
+                        position: relative;
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: calc(100% + 4px);
+                            left: 0;
+                            width: 0;
+                            height: 1px;
+                            background-color: #ff8700;
+                            transition: $transition;
+                        }
+                    }
+
+                    &:hover {
+                        color: $btnColor;
+                    }
+
+                    &:hover a::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footerInfo {
+    padding: 16px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2;
+    color: $textColor1;
+    background-color: #212529;
+}

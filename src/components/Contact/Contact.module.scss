@@ -1,0 +1,180 @@
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
+.contact {
+    padding: $bodyPaddingItem;
+    background-color: $backgroundColor1;
+
+    .container {
+        @include container;
+
+        .title {
+            @include title;
+        }
+    }
+
+    .contactBox {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 48px;
+
+        @include mobile {
+            padding: 8px;
+        }
+
+        box-shadow: 0 0 16px 1px rgb(41 41 41 / 8%);
+
+        .contactForm {
+            width: calc(100% * 2 / 3);
+
+            @include mobile {
+                width: 100%;
+            }
+        }
+
+        .contactInfo {
+            width: calc(100% * 1 / 3);
+
+            @include mobile {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.contactForm {
+    padding: 0 12px;
+
+    .errorMessage {
+        font-size: 14px;
+        color: red;
+        display: none;
+    }
+
+    .contactFormContainer {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .contactInput {
+        padding: 12px;
+        width: 100%;
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 5px;
+            border: 1px solid #ebebeb;
+            background-color: transparent;
+            font-size: 14px;
+            outline: none;
+
+            &:focus {
+                border-bottom: 1px solid $btnColor;
+            }
+        }
+
+        textarea {
+            min-height: 135px;
+            resize: vertical;
+            font-family: 'Rubik', sans-serif;
+        }
+    }
+
+    .contactInputName,
+    .contactInputEmail {
+        width: 50%;
+        @include mobile {
+            width: 100%;
+        }
+
+        @include tablet {
+            width: 100%;
+        }
+    }
+
+    .sendBtnContainer {
+        width: 100%;
+        padding: 12px;
+
+        .sendBtn {
+            padding: 14px 36px;
+            border: none;
+            border-radius: 4px;
+            background-color: $btnColor;
+            color: $textColor1;
+            outline: none;
+            font-size: 13px;
+            line-height: 1.5;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: $transition;
+
+            &:hover {
+                box-shadow: 0 3px 20px -8px #000;
+                transform: translateY(-3px);
+            }
+        }
+    }
+}
+
+.contactInfo {
+    padding: 16px;
+
+    .contactDetails {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 16px;
+        font-size: 13px;
+        color: $textColor3;
+
+        .contactDetailsIcon {
+            display: flex;
+            align-items: center;
+            margin-right: 16px;
+            border: 1px solid $textColor3;
+            padding: 8px;
+            border-radius: 50%;
+
+            svg {
+                font-size: 24px;
+            }
+        }
+
+        .contactDetailsText {
+            line-height: 2;
+        }
+    }
+
+    .contactFollow {
+        .contactFollowTitle {
+            margin-bottom: 16px;
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .contactFollowIcon {
+            display: flex;
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 38px;
+                height: 38px;
+                margin: 0 8px;
+                line-height: 38px;
+                border-radius: 50%;
+                color: $textColor3;
+                transition: $transition;
+
+                &:hover {
+                    color: $textColor1;
+                    background-color: $btnColor;
+                    box-shadow: 0px 0px 0px 8px rgba(255, 166, 0, 0.2);
+                }
+            }
+        }
+    }
+}

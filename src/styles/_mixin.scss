@@ -1,0 +1,85 @@
+@import './variables';
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin container {
+    margin: auto;
+    padding: 0 12px;
+    max-width: $maxWidthM;
+    @include tablet {
+        max-width: $maxWidthS;
+    }
+
+    @include mobile {
+        max-width: $maxWidthXS;
+    }
+}
+
+@mixin title {
+    position: relative;
+    display: inline-block;
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 48px;
+    &::before {
+        content: '';
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        top: 150%;
+        transform: translateY(-50%);
+        display: block;
+        background-color: $primaryColor;
+    }
+    &::after {
+        content: '';
+        height: 6px;
+        width: 25%;
+        position: absolute;
+        top: 150%;
+        left: 0;
+        transform: translateY(-50%);
+        display: block;
+        background-color: $btnColor;
+        border-radius: 4px;
+    }
+}
+
+@mixin itemIcon {
+    display: inline-flex;
+    margin-bottom: 24px;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 50%;
+    font-size: 40px;
+    font-weight: 300;
+    transition: $transition;
+}
+
+@mixin itemIconHover {
+    color: $textColor1;
+    background-color: $primaryColor;
+    box-shadow: 0px 0px 0px 8px $primaryColorShadow;
+    border-color: $primaryColor;
+}
+
+@mixin description {
+    line-height: $textLineHeight;
+    color: $textColor3;
+}

@@ -1,0 +1,114 @@
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
+.feature {
+    padding: $bodyPaddingItem;
+    background-color: $backgroundColor1;
+
+    .container {
+        @include container;
+
+        .title {
+            @include title;
+        }
+    }
+}
+
+.feature.reverse {
+    background-color: white;
+
+    .featureItemContent {
+        order: 2;
+    }
+
+    .featureItemThumnail {
+        order: 1;
+    }
+}
+
+.featureItem {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .featureItemContent {
+        width: 50%;
+        @include tablet {
+            width: 100%;
+        }
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    .featureItemThumnail {
+        width: 50%;
+        text-align: center;
+        position: relative;
+
+        @include tablet {
+            width: 100%;
+        }
+        @include mobile {
+            width: 100%;
+        }
+
+        img {
+            margin: 0 28px;
+            position: relative;
+            z-index: 1;
+            transition: $transition;
+        }
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background-color: $primaryColor;
+            transition: $transition;
+        }
+
+        &:hover img {
+            transform: scale(1.05);
+        }
+
+        &:hover::after {
+            box-shadow: 0px 0px 0px 12px $primaryColorShadow;
+        }
+    }
+}
+
+.featureItemContent {
+    .featureItemIcon {
+        font-size: 46px;
+        margin-bottom: 26px;
+        color: $primaryColor;
+    }
+
+    .featureItemTitle {
+        font-size: 24px;
+        font-weight: 400;
+        margin-bottom: 16px;
+    }
+
+    .featureItemDes {
+        @include description;
+        margin-bottom: 16px;
+    }
+
+    .learnMoreBtn {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: $primaryColor;
+
+        svg {
+            margin-left: 4px;
+        }
+    }
+}
